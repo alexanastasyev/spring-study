@@ -7,12 +7,13 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="myPet"
-          class="com.alexanastasyev.spring.introduction.Dog">
+    <bean id="pet"
+          class="com.alexanastasyev.spring.introduction.Cat">
     </bean>
 
-    <bean id="myPerson"
+    <bean id="person"
           class="com.alexanastasyev.spring.introduction.Person">
-        <constructor-arg ref="myPet"/>
+        <property name="pet" ref="pet"/>
     </bean>
+
 </beans>

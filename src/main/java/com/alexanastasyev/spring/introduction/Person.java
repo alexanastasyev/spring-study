@@ -1,9 +1,9 @@
 package com.alexanastasyev.spring.introduction;
 
 public class Person {
-    private final Pet pet;
+    private Pet pet;
 
-    public Person(Pet pet) {
+    public void setPet(Pet pet) {
         this.pet = pet;
     }
 
