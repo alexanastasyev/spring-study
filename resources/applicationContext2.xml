@@ -9,7 +9,8 @@
 
     <bean id="pet"
           class="com.alexanastasyev.spring.introduction.Dog"
-          scope="prototype">
+          init-method="init"
+          destroy-method="destroy">
     </bean>
 
 </beans>
