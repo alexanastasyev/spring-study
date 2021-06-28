@@ -1,5 +1,5 @@
 package com.alexanastasyev.spring.introduction;
 
-public interface Pet {
-    String say();
+abstract class Pet {
+    public abstract String say();
 }
