@@ -9,9 +9,11 @@ public class AopTest {
 
         UniversityLibrary universityLibrary = context.getBean("universityLibrary", UniversityLibrary.class);
         universityLibrary.getBook();
+        universityLibrary.getMagazine();
 
         SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
         schoolLibrary.getBook();
+        schoolLibrary.returnBook();
 
         context.close();
     }
