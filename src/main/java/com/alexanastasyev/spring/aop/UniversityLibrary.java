@@ -9,9 +9,9 @@ public class UniversityLibrary extends AbstractLibrary {
         System.out.println("Taking a book from UniversityLibrary");
     }
 
-    @Override
-    public void returnBook() {
+    public boolean returnBook() {
         System.out.println("Returning a book to UniversityLibrary");
+        return true;
     }
 
     public void getMagazine() {
