@@ -7,8 +7,11 @@ public class AopTest {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(AopConfig.class);
 
-        Library library = context.getBean("libraryBean", Library.class);
-        library.getBook();
+        UniversityLibrary universityLibrary = context.getBean("universityLibrary", UniversityLibrary.class);
+        universityLibrary.getBook();
+
+        SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
+        schoolLibrary.getBook();
 
         context.close();
     }
