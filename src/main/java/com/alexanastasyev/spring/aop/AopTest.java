@@ -12,8 +12,8 @@ public class AopTest {
         universityLibrary.getBook();
         universityLibrary.getMagazine();
 
-        universityLibrary.returnBook();
-        universityLibrary.returnMagazine();
+//        universityLibrary.returnBook();
+//        universityLibrary.returnMagazine();
 
         context.close();
     }
