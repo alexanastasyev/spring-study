@@ -6,25 +6,31 @@ import org.springframework.stereotype.Component;
 public class UniversityLibrary {
     public void getBook() {
         System.out.println("Taking a book from UniversityLibrary");
+        Utils.printSeparator();
     }
 
     public void getMagazine() {
         System.out.println("Taking a magazine from UniversityLibrary");
+        Utils.printSeparator();
     }
 
     public void returnBook() {
         System.out.println("Returning a book from UniversityLibrary");
+        Utils.printSeparator();
     }
 
     public void returnMagazine() {
         System.out.println("Returning a magazine from UniversityLibrary");
+        Utils.printSeparator();
     }
 
-    public void addBook() {
-        System.out.println("Adding a book from UniversityLibrary");
+    public void addBook(String user, Book book) {
+        System.out.println("Adding a book to UniversityLibrary");
+        Utils.printSeparator();
     }
 
     public void addMagazine() {
-        System.out.println("Adding a magazine from UniversityLibrary");
+        System.out.println("Adding a magazine to UniversityLibrary");
+        Utils.printSeparator();
     }
 }

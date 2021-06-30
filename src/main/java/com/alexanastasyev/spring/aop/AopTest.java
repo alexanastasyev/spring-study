@@ -8,9 +8,11 @@ public class AopTest {
                 new AnnotationConfigApplicationContext(AopConfig.class);
 
         UniversityLibrary universityLibrary = context.getBean("universityLibrary", UniversityLibrary.class);
+        Book book = context.getBean("bookBean", Book.class);
 
+        universityLibrary.addBook("alex", book);
+        universityLibrary.addMagazine();
         universityLibrary.getBook();
-        universityLibrary.getMagazine();
 
 //        universityLibrary.returnBook();
 //        universityLibrary.returnMagazine();
