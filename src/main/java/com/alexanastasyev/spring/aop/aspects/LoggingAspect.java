@@ -3,6 +3,7 @@ package com.alexanastasyev.spring.aop.aspects;
 import com.alexanastasyev.spring.aop.Book;
 import com.alexanastasyev.spring.aop.Utils;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -13,6 +14,17 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Order(1)
 public class LoggingAspect {
+    @Before("execution(* com.alexanastasyev.spring.aop.Student.goToLibrary(..))")
+    public void beforeStudentGoToLibraryLoggingAdvice() {
+        System.out.println("Logging student before going to library...");
+    }
+
+    @AfterReturning(pointcut = "execution(* com.alexanastasyev.spring.aop.Student.goToLibrary(..))",
+        returning = "result")
+    public void afterReturningStudentGoToLibraryAdvice(String result) {
+        System.out.println("Logging student after going to library... Returning value: " + result);
+    }
+
     @Before("com.alexanastasyev.spring.aop.aspects.pointcuts.AllUniversityLibraryGetMethodsPointcut.allUniversityLibraryGetMethodsPointcut()")
     public void beforeGetLoggingAdvice() {
         System.out.println("beforeGetLoggingAdvice: trying to get a book/magazine...");
