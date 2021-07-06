@@ -14,9 +14,9 @@ public class UniversityLibrary {
         Utils.printSeparator();
     }
 
-    public void returnBook() {
+    public String returnBook() {
         System.out.println("Returning a book from UniversityLibrary");
-        Utils.printSeparator();
+        return "War and Piece";
     }
 
     public void returnMagazine() {
