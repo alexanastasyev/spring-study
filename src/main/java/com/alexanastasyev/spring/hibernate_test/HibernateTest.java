@@ -14,7 +14,7 @@ public class HibernateTest {
 
         try {
             Session session = factory.getCurrentSession();
-            Employee employee = new Employee("Alexey", "Anastasyev", "IT", 60000);
+            Employee employee = new Employee("Alexander", "Morozov", "Rockets", 80000);
             session.beginTransaction();
             session.save(employee);
             session.getTransaction().commit();
