@@ -14,10 +14,18 @@ public class HibernateTest {
 
         try {
             Session session = factory.getCurrentSession();
-            Employee employee = new Employee("Alexander", "Morozov", "Rockets", 80000);
+            Employee employee = new Employee("Elena", "Ivanova", "HR", 40000);
             session.beginTransaction();
             session.save(employee);
             session.getTransaction().commit();
+
+            int employeeId = employee.getId();
+
+            session = factory.getCurrentSession();
+            session.beginTransaction();
+            Employee employeeFromDb = session.get(Employee.class, employeeId);
+            session.getTransaction().commit();
+            System.out.println(employeeFromDb);
         } finally {
             factory.close();
         }
