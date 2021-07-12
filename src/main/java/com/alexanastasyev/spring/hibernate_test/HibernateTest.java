@@ -19,9 +19,9 @@ public class HibernateTest {
             session.beginTransaction();
 
             Employee employee = session.get(Employee.class, 0);
-            employee.setSalary(200_000);
+            session.delete(employee);
 
-            session.createQuery("UPDATE Employee SET salary = 55000 WHERE name = 'Elena'").executeUpdate();
+            session.createQuery("DELETE Employee WHERE name = 'Elena'").executeUpdate();
 
             session.getTransaction().commit();
         } finally {
