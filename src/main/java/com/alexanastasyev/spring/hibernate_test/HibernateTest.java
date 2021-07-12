@@ -18,12 +18,10 @@ public class HibernateTest {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-            List<Employee> employees = session.createQuery("FROM Employee WHERE name LIKE 'A%' AND salary > 70000")
-                .getResultList();
+            Employee employee = session.get(Employee.class, 0);
+            employee.setSalary(200_000);
 
-            for (Employee employee : employees) {
-                System.out.println(employee);
-            }
+            session.createQuery("UPDATE Employee SET salary = 55000 WHERE name = 'Elena'").executeUpdate();
 
             session.getTransaction().commit();
         } finally {
