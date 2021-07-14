@@ -18,23 +18,22 @@ public class HibernateTest {
         try {
             session = factory.getCurrentSession();
 
-//            Employee employee = new Employee("Alexey", "Anastasyev", "IT", 1000);
-//            Detail details = new Detail("Ryazan", "123456789", "alex.anastasyev@mail.ru");
-//            employee.setDetails(details);
-
-//            Employee employee = new Employee("Oleg", "Smirnov", "Sales", 700);
-//            Detail details = new Detail("Moscow", "987654321", "olegatorv@gmail.com");
-//            employee.setDetails(details);
-
             session.beginTransaction();
 
-//            session.save(employee);
+//            Employee employee = new Employee("Peter", "Mikhailov", "HR", 400);
+//            Detail details = new Detail("Ryazan", "54394312", "peter.thegreat@gmail.com");
 //
-            Employee employee = session.get(Employee.class, 1);
-            System.out.println(employee + " " + employee.getDetails());
+//            details.setEmployee(employee);
+//            employee.setDetails(details);
+//
+//            session.save(details);
 
-//            Employee employee = session.get(Employee.class, 2);
-//            session.delete(employee);
+//            Detail details = session.get(Detail.class, 3);
+//            System.out.println(details.getEmployee());
+
+            Detail details = session.get(Detail.class, 1);
+            details.getEmployee().setDetails(null);
+            session.delete(details);
 
             session.getTransaction().commit();
         } finally {
